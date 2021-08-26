@@ -12,15 +12,22 @@ import vn.realestate.entity.Product;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
-	@Autowired
-	private ProductDAO productDAO;
+    
+    @Autowired
+    private ProductDAO productDAO;
 
-	@Override
+    @Override
+    @Transactional
+    public List<Product> getProducts() {
+
+	return productDAO.getProduct();
+    }
+
+    @Override
 	@Transactional
-	public List<Product> getProducts() {
-		
-		return productDAO.getProduct();
+	public void saveProduct(Product product) {
+	    productDAO.saveProduct(product);
+	    
 	}
 
 }

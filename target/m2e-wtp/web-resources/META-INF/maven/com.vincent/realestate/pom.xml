@@ -9,6 +9,7 @@
 	<name>realestate Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Dependency Versions -->
 		<springframework.version>5.0.6.RELEASE</springframework.version>
 		<mysql.connector.version>8.0.20</mysql.connector.version>

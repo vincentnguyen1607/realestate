@@ -6,6 +6,8 @@ import vn.realestate.entity.Product;
 
 public interface ProductService {
 
-	List<Product> getProducts();
+	public List<Product> getProducts();
+
+	public void saveProduct(Product product);
 	
 }

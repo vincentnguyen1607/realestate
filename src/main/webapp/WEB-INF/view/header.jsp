@@ -40,7 +40,7 @@
 					<a class="nav-link text-success"
 						href="${pageContext.request.contextPath}">Home</a> <a
 						class="nav-link text-success"
-						href="${pageContext.request.contextPath}/product-form">Add
+						href="${pageContext.request.contextPath}/show-form">Add
 						Product</a>
 				</nav>
 			</div>
@@ -55,6 +55,16 @@
 				<security:authorize access="isAuthenticated()">
 					<button type="button" class="btn btn-light mr-1 align-self-center"
 						onclick="location.href='${pageContext.request.contextPath}/logout'">LOGOUT
+					</button>
+				</security:authorize>
+				<security:authorize access="hasRole('ADMIN')">
+					<button type="button" class="btn btn-light mr-1 align-self-center"
+						onclick="location.href='${pageContext.request.contextPath}/admin'">ADMIN
+					</button>
+				</security:authorize>
+				<security:authorize access="hasRole('USER') && !hasRole('ADMIN')">
+					<button type="button" class="btn btn-light mr-1 align-self-center"
+						onclick="location.href='${pageContext.request.contextPath}/manage'">MANAGE
 					</button>
 				</security:authorize>
 			</div>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
@@ -23,14 +23,17 @@
 		<div class="row" style="height: 500px">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6 bg-light">
-				<h3 class="display-4 font-weight-bold text-uppercase">Thêm Một
-					Sản Phẩm</h3>
-				<form:form autocomplete="off" action="save-product"
-					modelAttribute="product" method="POST">
+				<h3 class="display-4 font-weight-bold text-uppercase">Add A
+					Product</h3>
+				<form:form autocomplete="off"
+					action="save-product/?${_csrf.parameterName}=${_csrf.token}"
+					enctype="multipart/form-data" modelAttribute="product"
+					method="POST">
 					<div class="form-group">
 						<label for="name">Product Name</label>
-						<form:input type="text" name="productName" path="productName" class="form-control"
-							id="name" placeholder="Input the name of the product!" />
+						<form:input type="text" name="productName" path="productName"
+							class="form-control" id="name"
+							placeholder="Input the name of the product!" />
 					</div>
 					<div class="form-group">
 						<label for="address">Product Address</label>
@@ -42,15 +45,16 @@
 						<form:input type="number" path="productPrice" class="form-control"
 							id="price" placeholder="Input the price of the product!" />
 					</div>
-					<div class="form-group">
+					<div clas="form-group">
 						<label for="image">Product Image</label>
-						<form:input type="file" path="productImage"
+						<form:input path="productImage" type="file"
 							class="form-control-file" id="image" />
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form:form>
 			</div>
 			<div class="col-sm-3"></div>
+			<img src="${pageContext.request.contextPath}/Images/chick.jpg" />
 		</div>
 	</div>
 

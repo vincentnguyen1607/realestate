@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="product")
@@ -16,8 +19,11 @@ public class Product {
 	@Column(name="ProductID")
 	private int productID;
 	
-	@Column(name="ProductImage")
-	private String productImage;
+	@Transient
+	private MultipartFile productImage;
+	
+	@Column(name="ProductImageLink")
+	private String productImageLink;
 	
 	@Column(name="ProductName")
 	private String productName;
@@ -31,13 +37,6 @@ public class Product {
 	public Product() {
 	}
 
-	public Product(String productImage, String productName, String productAddress, int productPrice) {
-		this.productImage = productImage;
-		this.productName = productName;
-		this.productAddress = productAddress;
-		this.productPrice = productPrice;
-	}
-
 	public int getProductID() {
 		return productID;
 	}
@@ -46,12 +45,20 @@ public class Product {
 		this.productID = productID;
 	}
 
-	public String getProductImage() {
+	public MultipartFile getProductImage() {
 		return productImage;
 	}
 
-	public void setProductImage(String productImage) {
+	public void setProductImage(MultipartFile productImage) {
 		this.productImage = productImage;
+	}
+
+	public String getProductImageLink() {
+		return productImageLink;
+	}
+
+	public void setProductImageLink(String productImageLink) {
+		this.productImageLink = productImageLink;
 	}
 
 	public String getProductName() {
@@ -80,8 +87,8 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [productID=" + productID + ", productImage=" + productImage + ", productName=" + productName
-				+ ", productAddress=" + productAddress + ", productPrice=" + productPrice + "]";
+		return "Product [productID=" + productID + ", productImage=" + productImage + ", productImageLink="
+				+ productImageLink + ", productName=" + productName + ", productAddress=" + productAddress
+				+ ", productPrice=" + productPrice + "]";
 	}
-	
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="vn/realestate/config/SecurityConfig.java|vn/realestate/config/SecurityWebApplicationInitializer.java|vn/realestate/config/EncodingFilter.java|vn/realestate/config/Utf8Filter.java" kind="src" output="target/classes" path="src/main/java">
+	<classpathentry excluding="vn/realestate/service/FileUploader.java" kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -47,8 +47,5 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/main/java/vn/realestate/config/EncodingFilter.java"/>
-	<classpathentry kind="lib" path="src/main/java/vn/realestate/config/SecurityConfig.java"/>
-	<classpathentry kind="lib" path="src/main/java/vn/realestate/config/SecurityWebApplicationInitializer.java"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
